@@ -12,20 +12,36 @@
   <h1>Currency Converter App</h1>
   <div id="app" >
 
-    <div id="enter-amount">
-      <label for="enter-amount">Enter Amount:</label>
-      <input type="number" min=0 v-model="inputCurrency">
+    <div id="enter-amount-from-euros">
+      <label for="enter-amount">Convert from Euros:</label>
+      <input type="number" min="0" v-model="inputCurrencyEuro">
     </div>
 
 
     <label for="currency-select">Select a Currency:</label>
-    <select id="currency-select" v-model="selectedCurrency" >
+    <select id="currency-select-from-euros" v-model="selectedCurrencyFromEuros" >
       <option disabled value="">Select a currency</option>
       <option v-for="(currency, rate) in currencies" :value="currency">{{ rate }}</option>
     </select>
 
-    <div id="converted-money">
-      <h3>Converted Currency: {{convertedCurrency}}</h3>
+    <div id="converted-money-from-euros">
+      <h3>Converted Currency from Euros: {{ convertedCurrencyFromEuros }}</h3>
+    </div>
+
+
+    <div id="enter-amount-to-euros">
+      <label for="enter-amount">Convert to Euros:</label>
+      <input type="number" min="0" v-model="inputCurrencyNotEuro">
+    </div>
+
+    <label for="currency-select">Select a Currency:</label>
+    <select id="currency-select-to-euros" v-model="selectedCurrencyToEuros" >
+      <option disabled value="">Select a currency</option>
+      <option v-for="(currency, rate) in currencies" :value="currency">{{ rate }}</option>
+    </select>
+
+    <div id="converted-money-to-euros">
+      <h3>Converted Currency to Euros: {{ convertedCurrencytoEuros }}</h3>
     </div>
 
   </div>
