@@ -13,8 +13,8 @@
   <div id="app" >
 
     <div id="enter-amount">
-      <label for="Enter Amount">Enter Amount:</label>
-      <input type="text" value="">
+      <label for="enter-amount">Enter Amount:</label>
+      <input type="number" min=0 v-model="inputCurrency">
     </div>
 
 
@@ -23,6 +23,10 @@
       <option disabled value="">Select a currency</option>
       <option v-for="(currency, rate) in currencies" :value="currency">{{ rate }}</option>
     </select>
+
+    <div id="converted-money">
+      <h3>Converted Currency: {{convertedCurrency}}</h3>
+    </div>
 
   </div>
 </body>

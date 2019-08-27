@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       currencies: {},
       selectedCurrency: null,
+      inputCurrency: null,
+    },
+    computed: {
+      convertedCurrency: function (){
+        return (this.inputCurrency * this.selectedCurrency).toFixed(2);
+      }
     },
     mounted() {
       this.fetchCurrencies();
