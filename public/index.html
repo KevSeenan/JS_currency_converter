@@ -9,7 +9,20 @@
   <title>Starter</title>
 </head>
 <body>
+  <h1>Currency Converter App</h1>
   <div id="app" >
+
+    <div id="enter-amount">
+      <label for="Enter Amount">Enter Amount:</label>
+      <input type="text" value="">
+    </div>
+
+
+    <label for="currency-select">Select a Currency:</label>
+    <select id="currency-select" v-model="selectedCurrency" >
+      <option disabled value="">Select a currency</option>
+      <option v-for="(currency, rate) in currencies" :value="currency">{{ rate }}</option>
+    </select>
 
   </div>
 </body>
